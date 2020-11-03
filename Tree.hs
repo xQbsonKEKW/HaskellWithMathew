@@ -188,3 +188,23 @@ foldlLoop f acc t = loop loopf $ (acc, [Right t])
 -- merge :: (Ord a) => [a] -> [a] -> [a]
 -- merge [1,5,7] [2,4,8] = [1,2,4,5,7,8]
 
+--Ad 1
+maximum :: (Ord a) => [a] -> Maybe a
+maximum [] = Nothing
+maximum (x:xs) = Just $ foldl max x xs
+
+minimum :: (Ord a) => [a] -> Maybe a
+minimum [] = Nothing
+minimum (x:xs) = Just $ foldl min x xs
+
+sum :: [Int] -> Int
+sum [] = 0
+sum l = foldl (+) 0 l 
+--JS: polish notation, huh
+
+prod :: [Int] -> Int
+prod [] = 1
+prod l = foldl (*) 1 l 
+
+--Ad 2
+--in progress...
